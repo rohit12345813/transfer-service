@@ -91,23 +91,23 @@ export default class TransferAmountService {
         }
         return [null, error2];
       }
-      // add transaction if amount has been successfully deposited to destination account number
-      const [, err5] = await SetTransactionDataService.perform({
-        accountNumber: destinationAccountNumber,
-        amount,
-        fromAccount: sourceAccountNumber,
-        status: "PASSED",
-        type: "DEPOSIT",
-      });
-
-      if (err5) {
-        console.log(`Internal Server Error: Failed to update DB!!`, err5);
-        return [null, err5];
-      }
-
-      console.log("TransferAmountService method finished");
-      return  [{...response.data}, null];
     }
+    // add transaction if amount has been successfully deposited to destination account number
+    const [, err5] = await SetTransactionDataService.perform({
+      accountNumber: destinationAccountNumber,
+      amount,
+      fromAccount: sourceAccountNumber,
+      status: "PASSED",
+      type: "DEPOSIT",
+    });
+
+    if (err5) {
+      console.log(`Internal Server Error: Failed to update DB!!`, err5);
+      return [null, err5];
+    }
+
+    console.log("TransferAmountService method finished");
+    return  [{...response.data}, null];
   }
 
   public static checkParam(data: ITransferAmountService) {
