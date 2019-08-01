@@ -110,10 +110,10 @@ export default class TransferAmountService {
       return [null, "Field 'amount' should be an Number > 0!!"];
     }
     if (!MethodHelper.isString(sourceAccountNumber)) {
-      return [null, "Field 'sourceAccountNumber' required and should be string!!"];
+      return [null, "Field 'sourceAccountNumber' required and should be nonEmpty string!!"];
     }
     if (!MethodHelper.isString(destinationAccountNumber)) {
-      return [null, "Field 'destinationAccountNumber' required and should be string!!"];
+      return [null, "Field 'destinationAccountNumber' required and should be nonEmpty string!!"];
     }
     if (!MethodHelper.isString(email)) {
       return [null, "Field 'email' is invalid!!"];

@@ -42,7 +42,7 @@ export default class ValidateWithdrawService {
     }
 
     if (totalAmount > config.get("transactionAmountLimitPerDay")) {
-      return [null, "Sorry!! Transaction Per Day Limit Reached."];
+      return [null, `Sorry!! Transaction Per Day Limit Reached. Please try amount below than ${amount}`];
     }
 
     console.log("ValidateWithdrawService method finished");
