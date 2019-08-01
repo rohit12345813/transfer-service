@@ -1,12 +1,7 @@
 import axios from "axios";
 import config from "../../config";
-import MethodHelper from "../../helper";
-
-interface IWithdrawAmountService {
-  amount: number;
-  sourceAccountNumber: string;
-  email: string;
-}
+import {IWithdrawAmountService} from "../../interfaces";
+import MethodHelper from "../../utils/helper";
 
 export default class WithdrawAmountService {
 

@@ -1,12 +1,7 @@
-import of from "await-of";
 import axios from "axios";
 import config from "../../config";
-import MethodHelper from "../../helper";
-
-interface IDepositAmountService {
-  amount: number;
-  accountNumber: string;
-}
+import {IDepositAmountService} from "../../interfaces";
+import MethodHelper from "../../utils/helper";
 
 export default class DepositAmountService {
 

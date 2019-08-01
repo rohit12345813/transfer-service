@@ -1,15 +1,9 @@
-import MethodHelper from "../../helper";
+import {ITransferAmountService} from "../../interfaces";
+import MethodHelper from "../../utils/helper";
 import SetTransactionDataService from "../setTransactionData";
 import ValidateWithdrawAmountService from "../validateWithdrawAmount";
 import DepositAmountService from "./depositAmount";
 import WithdrawAmountService from "./withdrawAmount";
-
-interface ITransferAmountService {
-  amount: number;
-  sourceAccountNumber: string;
-  destinationAccountNumber: string;
-  email: string;
-}
 
 export default class TransferAmountService {
 
@@ -116,10 +110,10 @@ export default class TransferAmountService {
       return [null, "Field 'amount' should be an Number > 0!!"];
     }
     if (!MethodHelper.isString(sourceAccountNumber)) {
-      return [null, "Field 'sourceAccountNumber' is required!!"];
+      return [null, "Field 'sourceAccountNumber' required and should be string!!"];
     }
     if (!MethodHelper.isString(destinationAccountNumber)) {
-      return [null, "Field 'destinationAccountNumber' is required!!"];
+      return [null, "Field 'destinationAccountNumber' required and should be string!!"];
     }
     if (!MethodHelper.isString(email)) {
       return [null, "Field 'email' is invalid!!"];

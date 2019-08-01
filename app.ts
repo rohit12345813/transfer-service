@@ -1,8 +1,8 @@
 import bodyParser from "body-parser";
 import express from "express";
 import config from "./config";
-import { amount } from "./routes/amount";
-import Cache from "./services/cache";
+import {amount} from "./routes/amount";
+import Cache from "./utils/cache";
 
 const app = express();
 const port = config.get("port");
@@ -28,5 +28,5 @@ app.listen(port, (err) => {
   }
   Cache.setCache();
   console.log(`Started ${config.get("app.name")}`);
-  return console.log(`server is listening on ${port}, env ${config.get("env")}`);
+  console.log(`server is listening on ${port}, env ${config.get("env")}`);
 });

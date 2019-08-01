@@ -1,17 +1,7 @@
 import of from "await-of";
-import MethodHelper from "../helper";
-import Cache from "./cache";
-
-interface ITransferData {
-  amount: number;
-  sourceAccountNumber: string;
-  destinationAccountNumber: string;
-  email: string;
-  status?: string;
-  transferId?: string;
-  createdAt?: Date;
-  updatedAt?: Date;
-}
+import {ITransferData} from "../interfaces";
+import Cache from "../utils/cache";
+import MethodHelper from "../utils/helper";
 
 export default class SetTransferDataService {
 

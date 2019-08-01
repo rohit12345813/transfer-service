@@ -1,12 +1,8 @@
 import of from "await-of";
 import moment from "moment";
 import config from "../config";
-import Cache from "./cache";
-
-interface IWithdrawServiceParam {
-  accountNumber: string;
-  amount: number;
-}
+import {IWithdrawServiceParam} from "../interfaces";
+import Cache from "../utils/cache";
 
 export default class ValidateWithdrawService {
 
@@ -31,8 +27,6 @@ export default class ValidateWithdrawService {
       const createdAt = moment(transaction.createdAt);
       const isTodayTransaction = createdAt.isSameOrAfter(startDate)
                                   && createdAt.isSameOrBefore(endDate);
-      console.log("createdAT", createdAt);
-      console.log("isTodayTrnacsation", isTodayTransaction);
 
       if (transaction.referenceTransactionId === transactionData.hasOwnProperty(transaction.referenceTransactionId)) {
         totalAmount -= transaction.amount;

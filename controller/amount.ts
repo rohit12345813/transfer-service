@@ -1,10 +1,10 @@
 import of from "await-of";
 import TransferAmountService from "../services/amount/transferAmount";
-import Cache from "../services/cache";
-import ResponseService from "../services/response";
 import SetTransferDataService from "../services/setTransferData";
+import Cache from "../utils/cache";
+import ResponseService from "../utils/response";
 
-class AmountController {
+export default class AmountController {
   public static async transferAmount(req, res) {
     const date = new Date();
     const [transferId, transferError] = await SetTransferDataService.perform({...req.body, createdAt: date});
@@ -28,5 +28,3 @@ class AmountController {
     }
   }
 }
-
-export default AmountController;

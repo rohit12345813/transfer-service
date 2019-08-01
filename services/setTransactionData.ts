@@ -1,29 +1,7 @@
 import of from "await-of";
-import MethodHelper from "../helper";
-import Cache from "./cache";
-
-interface IData {
-  amount: number;
-  status: string;
-  accountNumber: string;
-  type: string;
-  transactionId ?: string;
-  fromAccount?: string;
-  description?: string;
-  createAt?: Date;
-  referenceTransactionId?: string;
-}
-
-interface INewTransaction {
-  amount: number;
-  createdAt: Date;
-  status: string;
-  transactionId: string;
-  type: string;
-  fromAccount?: string;
-  description?: string;
-  referenceTransactionId?: string;
-}
+import {IData, INewTransaction} from "../interfaces";
+import Cache from "../utils/cache";
+import MethodHelper from "../utils/helper";
 
 export default class SetTransactionService {
 

@@ -1,12 +1,5 @@
-import config from "./config";
-
-interface IMethodHelper {
-  getAuthToken(): string;
-  getUniqId(): string;
-  isEmail(input: string): boolean;
-  isString(input: string): boolean;
-  isNumber(input: number): boolean;
-}
+import config from "../config";
+import {IMethodHelper} from "../interfaces";
 
 const methodHelper: IMethodHelper = {
   getAuthToken() {
@@ -30,6 +23,7 @@ const methodHelper: IMethodHelper = {
   isNumber(input) {
     return ((!isNaN(input)) && input > 0);
   },
+
 };
 
 export default methodHelper;
